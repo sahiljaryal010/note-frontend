@@ -18,16 +18,22 @@ function App() {
     fetchNotes();
   },[]);
 
-  const addNote=async()=>{
-    await
-    axios.post("https://note-backend-2pep.onrender.com/note",{
+const addNote = async () => {
+  await axios.post(
+    "https://note-backend-2pep.onrender.com/note",
+    {
       title,
-      description
-    });
-    settitle("");
-    setdescription('');
-    fetchNotes();
-  };
+      content: description   // ✅ FIX HERE
+    },
+    {
+      timeout: 30000
+    }
+  );
+
+  settitle("");
+  setdescription("");
+  fetchNotes();
+};
 
   const deleteNote=async(id)=>{
     await
