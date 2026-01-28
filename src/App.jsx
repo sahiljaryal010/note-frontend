@@ -19,16 +19,10 @@ function App() {
   },[]);
 
 const addNote = async () => {
-  await axios.post(
-    "https://note-backend-2pep.onrender.com/note",
-    {
-      title,
-      content: description   // ✅ FIX HERE
-    },
-    {
-      timeout: 30000
-    }
-  );
+await axios.post("https://note-backend-2pep.onrender.com/note", {
+  title,
+  description
+});
 
   settitle("");
   setdescription("");
