@@ -11,7 +11,7 @@ function App() {
 
   const fetchNotes=async()=>{
     const res=await
-    axios.get("https://note-backend-2pep.onrender.com/note");
+    axios.get("https://note-backend-j8r9.onrender.com/note");
     setnotes(res.data);
   };
   useEffect(()=>{
@@ -19,7 +19,7 @@ function App() {
   },[]);
 
 const addNote = async () => {
-await axios.post("https://note-backend-2pep.onrender.com/note", {
+await axios.post("https://note-backend-j8r9.onrender.com/note", {
   title,
   description
 });
@@ -31,7 +31,7 @@ await axios.post("https://note-backend-2pep.onrender.com/note", {
 
   const deleteNote=async(id)=>{
     await
-    axios.delete(`https://note-backend-2pep.onrender.com/note/${id}`);
+    axios.delete(`https://note-backend-j8r9.onrender.com/note/${id}`);
     fetchNotes();
   };
   return (
